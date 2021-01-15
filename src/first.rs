@@ -6,3 +6,9 @@ struct Node {
     elem: i32,
     next: Option<Box<Node>>,
 }
+
+impl List {
+    pub fn new() -> Self {
+        List { head: None }
+    }
+}
