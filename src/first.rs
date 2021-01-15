@@ -21,15 +21,10 @@ impl<T> List<T> {
     }
 
     pub fn pop(&mut self) -> Option<T> {
-        let result;
-        match self.head.take() {
-            None => result = None,
-            Some(node) => {
-                result = Some(node.elem);
-                self.head = node.next;
-            }
-        }
-        result
+        self.head.take().map(|node| {
+            self.head = node.next;
+            node.elem
+        })
     }
 }
 
