@@ -33,12 +33,31 @@ mod test {
     use super::*;
 
     #[test]
+    fn basics() {
+        let mut list = List::<i32>::new();
+
+        list.push(1);
+        list.push(2);
+        list.push(3);
+
+        assert_eq!(list.pop(), Some(3));
+        assert_eq!(list.pop(), Some(2));
+
+        list.push(4);
+        list.push(5);
+        assert_eq!(list.pop(), Some(5));
+        assert_eq!(list.pop(), Some(4));
+        assert_eq!(list.pop(), Some(1));
+        assert_eq!(list.pop(), None);
+    }
+
+    #[test]
     fn test_push() {
         let mut s1 = List::<i32>::new();
         s1.push(8);
         s1.push(7);
 
-        assert_eq!(s1.pop().unwrap(), 7);
-        assert_eq!(s1.pop().unwrap(), 8);
+        assert_eq!(s1.pop(), Some(7));
+        assert_eq!(s1.pop(), Some(8));
     }
 }
