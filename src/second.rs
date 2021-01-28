@@ -69,7 +69,7 @@ mod test {
     }
 
     #[test]
-    fn test_push() {
+    fn push() {
         let mut s1 = List::<i32>::new();
         s1.push(8);
         s1.push(7);
@@ -79,7 +79,7 @@ mod test {
     }
 
     #[test]
-    fn test_peek() {
+    fn peek() {
         let mut list = List::new();
         assert_eq!(list.peek(), None);
         assert_eq!(list.peek_mut(), None);

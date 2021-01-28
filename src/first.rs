@@ -61,7 +61,7 @@ mod test {
     }
 
     #[test]
-    fn test_push() {
+    fn push() {
         let mut s1 = List::<i32>::new();
         s1.push(8);
         s1.push(7);
